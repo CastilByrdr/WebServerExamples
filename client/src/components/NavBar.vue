@@ -26,12 +26,17 @@ function toggleMenu() {
 
   <div :class="{ 'is-active': isActive } " id="navbarBasicExample" class="navbar-menu"  >
     <div class="navbar-start">
+
       <RouterLink to="/" class="navbar-item">
         Home
       </RouterLink>
 
       <RouterLink to="/documentation" class="navbar-item">
         Documentation
+      </RouterLink>
+
+      <RouterLink to="/products" class="navbar-item">
+        Products
       </RouterLink>
 
       <div class="navbar-item has-dropdown is-hoverable">
