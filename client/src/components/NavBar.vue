@@ -2,6 +2,7 @@
 import { RouterLink } from 'vue-router';
 import { ref } from 'vue';
 import { count, isOpen } from '@/viewModel/cart';
+import LoginBadge from './LoginBadge.vue';
 
 let isActive = ref(false);
 
@@ -31,7 +32,6 @@ function toggleCart() {
 
   <div :class="{ 'is-active': isActive } " id="navbarBasicExample" class="navbar-menu"  >
     <div class="navbar-start">
-
       <RouterLink to="/" class="navbar-item">
         Home
       </RouterLink>
@@ -68,21 +68,16 @@ function toggleCart() {
     </div>
 
     <div class="navbar-end">
+
       <div class="navbar-item">
           <button class="button is-light" @click="toggleCart()" :class="{ shiftLeft : isOpen }">
             <i class="fas fa-shopping-cart"></i>
             <span class="tag is-danger is-rounded sup-tag">{{ count }}</span>            
           </button>
       </div>
+
       <div class="navbar-item">
-        <div class="buttons">
-          <a class="button is-primary">
-            <strong>Sign up</strong>
-          </a>
-          <a class="button is-light">
-            Log in
-          </a>
-        </div>
+        <LoginBadge />
       </div>
     </div>
   </div>
@@ -98,9 +93,9 @@ function toggleCart() {
     .sup-tag {
         transform: translate(-20%, -50%);
     }
+
     .shiftLeft {
         transform: translateX(-100%);
         transition: transform 1s ease-in-out;
     }
-
 </style>
